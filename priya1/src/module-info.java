@@ -1,0 +1,2 @@
+module priya1 {
+}
