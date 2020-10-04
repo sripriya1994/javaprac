@@ -32,7 +32,7 @@ public class Employee1
    }
    void ptax(int x)
    {
-	   int x1=200;
+	   double x1=PT;
 		System.out.println("YOUR        PROFF TAX        is :"+"    "+x1);
    }
    double pF()
