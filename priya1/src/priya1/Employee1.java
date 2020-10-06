@@ -84,8 +84,8 @@ public class EmployeePayslip()
 		 System.out.println("YOUR HOUSE RENTAL ALLOWANCE  is :"+"    "+a. Medical() );
 		 System.out.println(".......................................................");
 		 System.out.println("YOUR      Gross pay          is :"+"    "+ a.grossPay());
-	     System.out.println("....................................................");
-	     System.out.println("YOUR    Gross Pay Deduction  is :"+"    "+ a.grossPayDeduction());
+	         System.out.println("....................................................");
+	         System.out.println("YOUR    Gross Pay Deduction  is :"+"    "+ a.grossPayDeduction());
 		 System.out.println("....................................................");
 		 System.out.println("YOUR      netpay             is :"+"    "+ a.netPay());
 		 System.out.println("....................................................");
