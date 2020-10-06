@@ -2,80 +2,98 @@ package priya1;
 
 import java.util.Scanner;
 
-public class Employee1 
+public class EmployeePayslip()
 {
 	String Emp_basicpay;
-	double BP=20000,HRA=0.3,PT=200,PF=0.1,HA=0.2,MA=0.04,FA=0.1,GP;
+	final double BP=20000;
+	final double HRA=0.3;
+	final static double PT=200;
+	final double PF=0.1;
+	final double HA=0.2;
+	final double MA=0.04;
+	final static double FA=2000;
+	final double GP=0;
 	Scanner get = new Scanner(System.in);
-	Employee1()
-	{	
+	EmployeePayslip()
+	{
 	System.out.println("enter the employee basic pay");
 		Emp_basicpay=get.nextLine();
 	}
-    void hra()
-   {
-	double x=BP*HRA;
-	System.out.println("YOUR HOUSE RENTAL ALLOWANCE  is :"+"    "+x  );
-	
-   }
-   double holidayAllowance()
-   {
-	   double x=BP*HA;
-	   System.out.println("YOUR  HOLIDAY ALLOWANCE      is :"+"    "+x   );
-	   return x;   
-   }
-   double foodAllowance(double x)
-   {
-	   double y=BP*FA;
-	   System.out.println("YOUR    FOOD ALLOWANCE       is :"+"    " + y );
-	   return y;
-   }
-   void ptax(int x)
-   {
-	   double x1=PT;
-		System.out.println("YOUR        PROFF TAX        is :"+"    "+x1);
-   }
-   double pF()
-   {
-	   double x=BP*PF;
-	   System.out.println("YOUR     PROVIDIENT FUND     is :"+"    "+x );
-	   return x;
-   }
-   double MedicalA()
-   {
-	   double x=BP*MA;
-	   System.out.println("YOUR MEDICAL ALLOWANCE       is :"+"    "+x );
-	   System.out.println("................................................");
-	   return x;
-   }
-   double grossPay()
-   {
-	   
-	double x=BP+(BP*HRA)+(BP*PF)+(BP*HA)+(BP*MA)+(BP*FA)+PT;
-	System.out.println("YOUR      Gross pay          is :"+"    "+ x );
-	System.out.println("....................................................");
-	   return x;
-   }
-   double netPay()
-   {
-    double GP=BP+(BP*HRA)+(BP*PF)+(BP*HA)+(BP*MA)+(BP*FA)+PT;
-	double x=GP-(BP*PF)-(BP*MA)-PT;
-	System.out.println("YOUR        NetPay           is :"+"    " +x );
-	System.out.println("....................................................");
-	   return x;
-	   
-   }
-   public static void main(String[] args)
-   {
-	Employee1 a=new Employee1();
-	a.hra();
-	a.holidayAllowance();
-	a.foodAllowance(0.1);
-	a.ptax(200);
-	a.pF();
-	a.MedicalA();
-	a.grossPay();
-	a.netPay();
-	
+	  double hra()
+	   {
+		double x=BP*HRA;
+		return x;
+		
+	   }
+	  double holidayAllowance()
+	   {
+		   double x=BP*HA;
+		  
+		   return x;   
+	   }
+	   double pF()
+	   {
+		   double x=BP*PF;
+		   
+		   return x;
+	   }
+	   double Medical()
+	   {
+		   double x=BP*MA;
+		   
+		   return x;
+	   }
+	  
+	  double grossPay()
+	   {
+		  double A= this.hra(); 
+		  double B= this.holidayAllowance();
+		  
+		  double C= this.pF();
+		
+		  double D= this.Medical();
+		  
+		double x=BP+(A+B+C+D)+PT+FA;
+		
+		   return x;
+	   }
+	  double grossPayDeduction()
+	  {
+		  double B= this.Medical();
+		  double C=this.pF();
+		  double x=-B-C;
+		  
+		  return x;
+	  }
+	  double netPay()
+	  {
+		  double A=this.grossPay();
+		  double B=this.grossPayDeduction();
+		  double x=A-B;
+		 
+		  return x;
+	  }
+	  public static void main(String[] args)
+	   {
+		  EmployeePayslip a=new EmployeePayslip() ;
+		 System.out.println("YOUR HOUSE RENTAL ALLOWANCE  is :"+"    "+a. hra()  );
+		 System.out.println("YOUR  HOLIDAY ALLOWANCE      is :"+"    "+a.holidayAllowance() ); 
+		 System.out.println("YOUR PROFESSIONAL TAX        is :"+"    "+PT );
+		 System.out.println("YOUR FOOD ALLOWANCE          is :"+"    "+FA );
+		 System.out.println("YOUR HOUSE RENTAL ALLOWANCE  is :"+"    "+a. pF()  );
+		 System.out.println("YOUR HOUSE RENTAL ALLOWANCE  is :"+"    "+a. Medical() );
+		 System.out.println(".......................................................");
+		 System.out.println("YOUR      Gross pay          is :"+"    "+ a.grossPay());
+	     System.out.println("....................................................");
+	     System.out.println("YOUR    Gross Pay Deduction  is :"+"    "+ a.grossPayDeduction());
+		 System.out.println("....................................................");
+		 System.out.println("YOUR      netpay             is :"+"    "+ a.netPay());
+		 System.out.println("....................................................");
+		
+		
+	   }
+
 }
-}
+
+
+
