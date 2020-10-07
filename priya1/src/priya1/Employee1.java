@@ -2,7 +2,7 @@ package priya1;
 
 import java.util.Scanner;
 
-public class EmployeePayslip()
+public class Employee1
 {
 	String Emp_basicpay;
 	final double BP=20000;
@@ -14,7 +14,7 @@ public class EmployeePayslip()
 	final static double FA=2000;
 	final double GP=0;
 	Scanner get = new Scanner(System.in);
-	EmployeePayslip()
+	Employee1()
 	{
 	System.out.println("enter the employee basic pay");
 		Emp_basicpay=get.nextLine();
